@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  #d2,#d4,#d6,#d8,#d10,#d12,.d15{display:none;}
+  hr{border-top: 1px solid black;}
+a{text-decoration: none !important; color:black;}
+.o{
+  float: right;
+  margin-top: 37px;
+  list-style-type: none;
+  font-size: 165%;
+  font-weight: bold;
+}
+.o li{
+  display: inline-block;
+  margin-left:20px;
+}
+.o li a{
+  color:black;
+
+}
+
+  </style>
+  <script>
+    $(document).ready(function(){
+      $("#d1").click(function(){
+        $("#d2").slideToggle();
+      });
+      $("#d3").click(function(){
+        $("#d4").slideToggle();
+      });
+      $("#d5").click(function(){
+        $("#d6").slideToggle();
+      });
+      $("#d7").click(function(){
+        $("#d8").slideToggle();
+      });
+      $("#d9").click(function(){
+        $("#d10").slideToggle();
+      });
+      $("#d11").click(function(){
+        $("#d12").slideToggle();
+      });
+      $("#d1,#d3,#d5,#d7,#d9,#d11,.o1").mouseover(function(){
+        $(this).css({"color":"#e67e22"});
+      });
+      $("#d1,#d3,#d5,#d7,#d9,#d11,.o1").mouseout(function(){
+        $(this).css({"color":"black"});
+        $("#o2").css({"color":"#e67e22"});
+      });
+
+        /*$(window).scroll(function(){
+    var aTop = $('.ad').height()+$(".d20").height();
+    if($(this).scrollTop()>=aTop){
+        $("#d15").show();
+       
+    }
+  });*/
+    });
+  </script>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row" id="d20">
+<div class="col-sm-1"></div>
+<div class="col-sm-4" style="text-align:right;margin-top:25px;color:#e67e22;"><h2><b>How Can we Help You ?</b></h2></div>
+  <div class="col-sm-6">
+    <ul class="o">
+      <li ><a href="main.html" class="o1"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li ><a href="#" class="o1" style="color:#e67e22" id="o2"><span class="glyphicon glyphicon-education"></span> Help</a></li>
+      <li><a href="signup.html" class="o1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li ><a href="file:///C:/Users/Hp/Desktop/Bootstrap/project(main)/signup.html#" class="o1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-1"></div>
+</div><br>
+  <div class="row ad" style="height:175px;background-color:#37718E;color:white;"><div class="col-sm-1"></div><div class="col-sm-10"><br><h1>Help & Support</h1><h3>Let's take a step ahead and help you better</h3></div><div class="col-sm-1"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1 k" style="background-color:#37718E;height:60vw;"> </div>
+    <div class="col-sm-10" class="q">
+      <h1 style="margin-left:40px;">FAQ's</h1><br>
+        <div class="row">
+        <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+
+              <div style="margin" id="d1"><h2> Can I Edit My Order ?<span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d2"><h3>Your order can be edited before it reaches your Table.<br> Once order is placed and restaurant starts preparing your food, you may not edit its contents</h3></div><hr><br>
+
+              <div style="margin" id="d3"><h2> I want to Cancel My Order<span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d4"><h3>We will do our best to accommodate your request if the order is not placed.<br>Please note that we will have a right to charge a cancellation fee up to full order value to compensate our restaurant if your order has been confirmed.</h3></div><hr><br>
+              <div style="margin" id="d5"><h2>Will you be accountable for quality/quantity?<span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d6"><h3>Quantity and quality of the food is the restaurants' responsibility. However in case of <br>issues with the quality or quantity, kindly submit your feedback and we will try to improve it.</h3></div><hr><br>
+              <div style="margin" id="d7"><h2>Is there a minimum order value?<span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d8"><h3>We have no minimum order value and you can order for any amount</h3></div><hr><br>
+               <div style="margin" id="d9"><h2>Do you support bulk orders ? <span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d10"><h3>In order to provide all customers with a great selection and to ensure on time delivery of<br> your meal, we reserve the right to limit the quantities depending on supply</h3></div><hr><br>          
+              <div style="margin" id="d11"><h2>Can I order in advance?<span class="glyphicon glyphicon-chevron-down" style="float:right;"></span></h2></div>
+              <div id="d12"><h3>We currently do not support this functionality. All our orders are placed and executed <br>on-demand</h3></div><hr><br>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div class="col-sm-1 k" style="background-color:#37718E;height:60vw;"> </div>
+  </div>
+  <div class="row" style="height:90px;background-color:#37718E;"></div>
+
+</div>
+
+</body>
+  </html>

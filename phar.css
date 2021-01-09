@@ -1,0 +1,32 @@
+#k{
+  width:85%;
+  height:370px;
+   background:url(phar1.jpg);
+  margin:auto;
+ animation:slide 20s infinite;
+    }
+
+@keyframes slide{
+ 25%{
+        background:url(phar2.jpg);
+           }
+    50%{
+        background:url(phar3.jpg);
+           }
+75%{
+        background:url(phar1.jpg);
+           }
+100%{
+        background:url(phar2.jpg);
+           }
+}
+body{
+ background-color:white;}
+h1{
+   color:red;
+   text-align:center;
+}
+p{
+   color:black;
+   font-size:25px;
+   }

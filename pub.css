@@ -1,0 +1,22 @@
+body{
+margin-left:8%;
+margin-right:10%;
+padding:0;
+background-color:#313131;
+  }
+
+h1{
+color:white;
+ size:50px;
+ text-align:center;  
+  
+}
+#u{
+  text-align:center;
+  color:white;
+  font-size:35px;
+}
+p{
+  color:white;
+  font-size:20px;
+   }

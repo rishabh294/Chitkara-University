@@ -1,0 +1,37 @@
+#k{
+  width:85%;
+  height:370px;
+   background:url(ad1.jpg);
+  margin:auto;
+ animation:slide 20s infinite;
+    }
+
+@keyframes slide{
+ 25%{
+        background:url(ad2.jpg);
+           }
+    50%{
+        background:url(ad3.jpg);
+           }
+75%{
+        background:url(ad1.jpg);
+           }
+100%{
+        background:url(ad2.jpg);
+           }
+}
+body{
+ background-color:white;}
+h1{
+   color:red;
+   text-align:center;
+}
+p{
+   color:blue;
+   font-size:25px;
+   }
+ul{
+    color:blue;
+   font-size:30px;
+  
+    }

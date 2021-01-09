@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+<link rel="stylesheet" href="pg.css">
+
+
+</head>
+<body>
+<div class="wrapper">
+  <div class="payment">
+    <div class="payment-logo">
+      <p>p</p>
+    </div>
+  
+    
+    <h2>Payment Gateway</h2>
+    <div class="form">
+      <div class="card space icon-relative">
+        <label class="label">Card holder:</label>
+        <input type="text" class="input" placeholder="Holder's Name" id="f1">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="card space icon-relative">
+        <label class="label">Card number:</label>
+        <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number" id="f2">
+        <i class="far fa-credit-card"></i>
+      </div>
+      <div class="card-grp space">
+        <div class="card-item icon-relative">
+          <label class="label">Expiry date:</label>
+          <input type="text" name="expiry-data" class="input" data-mask="00 / 00" placeholder="00 / 00" id="f3">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="card-item icon-relative">
+          <label class="label">CVC:</label>
+          <input type="text" class="input" data-mask="000" placeholder="000" id="f4">
+          <i class="fas fa-lock"></i>
+        </div>
+      </div>
+        
+      <div class="btn btn-block btn-info" id="b1">
+        Pay
+      </div> 
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+   <div class="alert alert-danger alert-dismissible fade in" style="display:none;" id="d2">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Please</strong> fill all the required fields.
+  </div>
+  <div class="alert alert-success alert-dismissible fade in" style="display:none;" id="d3">
+    <a  class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thanking You</strong> for ordering ..Please Visit Again.
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#b1").click(function(){
+      var a=$("#f1").val();
+      var b=$("#f2").val();
+      var c=$("#f3").val();
+      var d=$("#f4").val();
+      if(a.length==0 ||b.length==0 ||c.length==0 ||d.length==0 )
+        $("#d2").show();
+      else {
+        $("#d2").hide();
+        $("#d3").show();
+      }
+    });
+  });
+</script>
+</body>
+</html>

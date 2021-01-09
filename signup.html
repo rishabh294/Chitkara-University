@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    body{ 
+      background-image :url(food1.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      font-family:new time roman;
+    }
+    h1{
+      font-size: 50px;
+      color:white;
+      margin-top: 30px;
+      margin-bottom:60px;
+
+    }
+    h2{
+      font-size: 30px;
+      color:white;
+      margin-top: 30px;
+      margin-bottom:60px;
+
+    }
+
+    .col-md-5{
+      background: rgba(0,0,0,0.5);
+      margin-top: 40px;
+    }
+    .label{
+      font-size:20px;
+      font-weight: normal;
+    }
+    .input-group{
+      margin-top:10px;
+      margin-bottom: 20px; 
+    }
+    .input-group-addon{
+      background:transparent;
+      border-radius: 0px;
+      border:0px;
+      border-bottom:1px solid white;
+      font-size:18px;
+      color:grey; 
+    }
+    .form-control{
+      background:transparent;
+      border-radius: 0px;
+      border:0px;
+      border-bottom:1px solid white;
+      padding :15px;
+      color:white;
+      font-size:21px;
+    }
+    input[type="checkbox"]{
+      height:15px;
+      width:15px;
+    }
+    p{
+      font-size:18px;
+      color:white;
+      text-align: center;
+    }
+    small{
+      font-size: 18px;
+      color:white;
+    }
+    .btn-success{
+      border-radius: 0px;
+      width: 550px;
+      font-size:20px;
+      margin-top:20px;
+      margin-bottom: 30px;
+    }
+     .btn-info{
+      border-radius: 0px;
+      width: 550px;
+      font-size:20px;
+      margin-top:20px;
+      margin-bottom: 30px;
+    }
+    #d1{
+      display :none;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $("#b1").click(function(){
+        var c=$("#cc").val();
+        var p=$("#pp").val();
+
+        if(c.lenght==0 || p.length==0){
+          alert("Please enter the required feilds");
+          $("#a1").attr("href","#");
+        }
+        else
+        $("#a1").attr("href","order.html"); 
+      });
+      $("#register").click(function(){
+        $("#d1").show();
+      });
+      $("#modalc1").click(function(){
+         var aa=$("#phone1").val();
+         alert(" Reset link send to +91"+ aa);
+      });
+      $("#b2").click(function(){
+        var pas=$("#p2").val();
+        var rpas=$("#p3").val();
+        if(pas!=rpas)
+          alert("Enter password again");
+         var email= /^[A-Za-z]+[0-9]+@[a-zA-Z]+\.(com|in)$/;
+        var name=/^[a-zA-Z]{6,}$/;
+        var phone=/^[0-9]{10}$/;
+         var e2=$("#e1").val();
+         var n=$("#nn").val();
+         var ph=$("#pn").val();
+         if(name.test(n)==0)
+          alert("Enter proper name ");
+        if(phone.test(ph)==0)
+          alert("Enter proper phone number");
+         if(email.test(e2)==0)
+          alert("Enter valid email");
+
+      });
+
+    });
+  </script>
+  <body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <h1 class="text-center"> FOOD COURT</h1>
+      <label class="label control-label">Card number</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input type="text" class="form-control" placeholder="Card number..." id="cc">
+      </div>
+      <label class="label control-label">Password</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input type="password" class="form-control" placeholder="Password" id="pp">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="checkbox"><small>Remeber me</small>
+        </div>
+        <div class="col-md-6">
+          <a href="#" data-toggle="modal" data-target="#myModal"><p class="text-right">Forget password ?</p></a>
+        </div>
+      </div>
+      <center><a href="order.html" id="a1"><div class="btn btn-success" id="b1">SIGN IN</div></a></center>
+      <p>Not yet having a card ? <a href="#" style="color:red;" class="text-right" id="register">Register</a></p>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-5" id="d1">
+      <h2 class="text-center" style="color:white">Register</h2>
+      <label class="label control-label">Name</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input type="text" class="form-control" placeholder="Full name" id="nn">
+
+      </div>
+      <label class="label control-label">Roll No.</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+        <input type="number" class="form-control" placeholder="College-Id" id="ci">
+      </div>
+      <label class="label control-label">Email</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+        <input type="text" class="form-control" placeholder="Enter your Email" id="e1">
+      </div>
+      <label class="label control-label">Phone-number</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-inbox"></span></span>
+        <input type="number" class="form-control" placeholder="Phone-number" id="pn">
+      </div>
+
+      <label class="label control-label">Password</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input type="password" class="form-control" placeholder="Password" id="p2">
+      </div>
+      <label class="label control-label">Re-Password</label>
+      <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input type="password" class="form-control" placeholder="Re-type password" id="p3">
+      </div>
+       <center><a href="#"><div class="btn btn-info" id="b2">Register</div></a></div></center>
+
+      </div>
+    </div>
+  </div>
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Forget password?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the phone number to send a reset link on that !</p>
+          <label class="label control-label">Phone Number</label>
+          <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-inbox" ></span></span>
+          <input type="number" placeholder="Enter phone number to send the reset link" class="form-control" id="phone1" style="color:black;">
+
+        </div>
+        <button class="btn btn-success" id="modalc1">Ok</button>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  </body>
+</html>

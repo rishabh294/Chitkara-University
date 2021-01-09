@@ -1,0 +1,5 @@
+email:^[A-Za-z]+[0-9]+@[a-zA-Z]+\.(com|in)$
+phone:^[0-9]{10}$
+phone2:^\+(91)[0-9]{10}$
+domain:(www)\.[a-zA-z0-9]+\.(com|in|es|net)
+Name:^[a-zA-Z]{6,}$

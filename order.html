@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="angular.min.js"></script>
+<script>
+	var app=angular.module("myApp",[]);
+	app.controller("ctr",function($scope){
+		$scope.x=0;
+		$scope.balance=1000;
+		$scope.abc=function(q,p){
+		 $scope.x=$scope.x+(p*q);
+		};
+		$scope.remove=function(p,q){
+			$scope.x=$scope.x-(p*q);
+		};
+
+
+	});
+</script>
+<script>
+$(document).ready(function(){
+	var balance=1000;
+		var d=new Date();
+		$("#date").append(d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()); 
+  $("#e").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  $("#conf").click(function(){
+  var abcd=confirm("Are you sure you want to proceed ? ");
+ if(abcd==0)
+ 	window.alert("Payment cancelled");
+	else 
+		window.alert("Order successfully Placed ");
+});
+
+$("#b3").click(function(){
+
+	window.alert("Your current amount is "+balance);
+});
+$("#o1").click(function(){
+
+	window.alert("Your current amount is "+balance);
+});
+});
+
+</script>
+
+<body ng-app="myApp" ng-controller="ctr">
+	<div class="container">  
+	<marquee><h1 style="color:#e67e22; "><b><span style="height:70px;">Welcome to Food-Garage</span></b></h1></marquee>
+	
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="foodc.jpg"  style="width:100%; height:500px">
+      </div>
+
+      <div class="item">
+        <img src="foodc1.jpg" style="width:100%;  height:500px">
+      </div>
+    
+      <div class="item">
+        <img src="foodc4.jpg" style="width:100%;  height:500px">
+      </div>
+      <div class="item">
+        <img src="foodc3.jpg" style="width:100%;  height:500px">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <br><br>
+  <div>
+	<div class="jumbotron"><b><center><span style="font-size:30px;">Food-Garage <br></b></span></center>
+		<span>Bill No:0000#1c</span> <span style="margin-left:700px; font-size:20px;" ><b>Bill Date : <span id="date"></span></b></span>
+	</div>
+</div>
+  <h3><form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="e">Enter your Choice</label>
+      <div class="col-sm-10"><br>
+        <input type="text" class="form-control" id="e" placeholder="Search...." name="e">
+      </div>
+    </div>
+  
+  </form>
+</h3>
+<table class="table table-striped">
+	<tr>
+		<th>Items</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Action</th>
+	</tr>
+	<tbody id="myTable">
+	<tr>
+		<td>Dal-Makhni</td>
+		<td><b>35</b></td>
+		<td><input type="number" style="width:50%;" ng-model="dq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(dq,35)">Add</button> <button class="btn btn-primary" ng-click="remove(dq,35)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Panner Lababdar</td>
+		<td><b>50</b></td>
+		<td><input type="number" style="width:50%;" ng-model="pq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(pq,50)">Add</button> <button class="btn btn-primary" ng-click="remove(pq,50)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Chole Bhature</td>
+		<td><b>30</b></td>
+		<td><input type="number" style="width:50%;" ng-model="cq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(cq,30)">Add</button> <button class="btn btn-primary" ng-click="remove(cq,30)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Pav Bhaji</td>
+		<td><b>40</b></td>
+		<td><input type="number" style="width:50%;" ng-model="pbq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(pbq,40)" >Add</button> <button class="btn btn-primary" ng-click="remove(pbq,40)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Pasta(White)</td>
+		<td><b>50</b></td>
+		<td><input type="number" style="width:50%;" ng-model="pwq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(pwq,50)">Add</button> <button class="btn btn-primary" ng-click="remove(pwq,50)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Pasta(Red)</td>
+		<td><b>50</b></td>
+		<td><input type="number" style="width:50%;" ng-model="prq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(prq,50)">Add</button> <button class="btn btn-primary" ng-click="remove(prq,50)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Allo Puri</td>
+		<td><b>30</b></td>
+		<td><input type="number" style="width:50%;" ng-model="apq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(apq,30)">Add</button> <button class="btn btn-primary" ng-click="remove(apq,30)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Roti</td>
+		<td><b>5</b></td>
+		<td><input type="number" style="width:50%;" ng-model="rq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(rq,5)">Add</button> <button class="btn btn-primary" ng-click="remove(rq,5)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Nan(With Butter)</td>
+		<td><b>15</b></td>
+		<td><input type="number" style="width:50%;" ng-model="nbq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(nbq,15)">Add</button> <button class="btn btn-primary" ng-click="remove(nbq,15)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Suffed Nan</td>
+		<td><b>15</b></td>
+		<td><input type="number" style="width:50%;" ng-model="snq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(snq,15)">Add</button> <button class="btn btn-primary" ng-click="remove(snq,15)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Amaritsari Kulcha</td>
+		<td><b>30</b></td>
+		<td><input type="number" style="width:50%;" ng-model="akq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(akq,30)">Add</button> <button class="btn btn-primary" ng-click="remove(akq,30)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Gol-Gappe</td>
+		<td><b>20</b></td>
+		<td><input type="number" style="width:50%;" ng-model="ggq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(ggq,20)">Add</button> <button class="btn btn-primary" ng-click="remove(ggq,20)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Tikki</td>
+		<td><b>30</b></td>
+		<td><input type="number" style="width:50%;" ng-model="tkq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(tkq,30)">Add</button> <button class="btn btn-primary" ng-click="remove(tkq,30)">Remove</button></td>
+	</tr>
+	<tr>
+		<td>Cheese Chilly</td>
+		<td><b>90</b></td>
+		<td><input type="number" style="width:50%;" ng-model="cclq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(cclq,90)">Add</button> <button class="btn btn-primary" ng-click="remove(cclq,90)">Remove</button></td>
+	</tr>
+<tr>
+		<td>Oreo Shake</td>
+		<td><b>100</b></td>
+		<td><input type="number" style="width:50%;" ng-model="osq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(osq,100)">Add</button> <button class="btn btn-primary" ng-click="remove(osq,100)">Remove</button></td>
+	</tr>
+
+<tr>
+		<td>Mango Shake</td>
+		<td><b>80</b></td>
+		<td><input type="number" style="width:50%;" ng-model="msq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(msq,80)">Add</button> <button class="btn btn-primary" ng-click="remove(msq,80)">Remove</button></td>
+	</tr>
+
+<tr>
+		<td>Rose Shake</td>
+		<td><b>80</b></td>
+		<td><input type="number" style="width:50%;" ng-model="rsq"></td>
+		<td> <button class="btn btn-success" ng-click="abc(rsq,80)">Add</button> <button class="btn btn-primary" ng-click="remove(rsq,80)">Remove</button></td>
+	</tr>
+
+
+</tbody>
+</table>
+<center>
+
+	<button class="btn btn-success" data-toggle="modal" data-target="#order">Order Now</button></center>
+    <span style="font-size:30px;"><b> Your Total paymemt :{{x}}</b></span><br><br><br><br><br>
+    <div class="modal fade" id="order" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title" style="color:blue;">Payment Mode</h3></center>
+        </div>
+        <div class="modal-body"><center>
+          <a href="payment.html"><button class="btn btn-success btn-lg" ng-click="o1()">Online</button></a>
+          <button class="btn btn-danger btn-lg" id="conf">Cash</button></center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<!--<div>
+	<div class="jumbotron"><b><center><span style="font-size:30px;">Food-court <br></b></span></center>
+		<span>Bill No:0000#1c</span> <span style="margin-left:700px; font-size:20px;" ><b>Bill Date : <span id="date"></span></b></span>
+	</div>
+</div>-->
+
+</div>
+
+</body>
+</html>
